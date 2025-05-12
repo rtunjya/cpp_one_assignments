@@ -1,0 +1,9 @@
+# Ignore build folders and IDE files
+/cmake-build-debug/
+/.idea/
+/*.DS_Store
+
+# Ignore any binaries, object files, etc.
+*.o
+*.obj
+*.exe

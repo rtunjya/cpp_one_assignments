@@ -1,0 +1,27 @@
+name: CMake Build and Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use macos-latest or windows-latest if needed
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies (Linux)
+        run: sudo apt-get update && sudo apt-get install -y cmake g++  # Adjust for macOS or Windows
+
+      - name: Configure CMake
+        run: cmake -S . -B build
+
+      - name: Build Project
+        run: cmake --build build --parallel  # Uses multiple cores for faster compilation
+
+      - name: Run Tests
+        run: ctest --test-dir build --output-on-failure

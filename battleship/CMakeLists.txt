@@ -1,4 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
+ HEAD(
+project(Assignments)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/algorithms)
+add_subdirectory(${CMAKE_SOURCE_DIR}/battleship)
+
 cmake_policy(VERSION 3.10)
 
 project(battleship)
@@ -51,3 +60,4 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(battleship_test)
+ 6d0bd6a (completed assignment))

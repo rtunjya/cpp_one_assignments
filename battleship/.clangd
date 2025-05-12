@@ -1,0 +1,2 @@
+CompilerFlags
+  Add: [-std=c++17, -xc++, -Wc++11-extensions]
